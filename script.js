@@ -33,6 +33,7 @@ const removeError = (input) => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  console.log('превент дефаулт');
   if (nonactiveTimer) return;
   nonactiveTimer = true;
 
