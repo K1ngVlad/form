@@ -1,3 +1,5 @@
+console.log('скрипт запущен');
+
 const form = document.forms.register;
 
 const { username, email, password, repeat_password } = form;
