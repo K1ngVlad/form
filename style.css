@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: #a7d7c5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Karla', sans-serif;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 750px;
+  height: 750px;
+  transform: rotate(-45deg) translate(0, -50%);
+  border-radius: 160px;
+  background: #c1e3d6;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 750px;
+  height: 750px;
+  transform: rotate(-45deg) translate(0, 50%);
+  border-radius: 160px;
+  background: #c1e3d6;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+form {
+  position: relative;
+  width: 700px;
+  padding: 40px;
+  border-radius: 50px;
+  background: #f6fbf9;
+  z-index: 2;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  color: #212b27;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.descript {
+  width: 500px;
+  margin-top: 4px;
+  color: #32403b;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.inputContainer {
+  margin-top: 33px;
+  width: 100%;
+  padding: 0 30px;
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+}
+
+.inputField {
+  width: 100%;
+  height: 54px;
+  border-radius: 15.341px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  outline: none;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 13px;
+}
+
+.inputField::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.inputBox + .inputBox {
+  margin-top: 40px;
+}
+
+.inputError {
+  background: rgb(248, 197, 188);
+  animation: inputBlink 1s ease 0s 1 normal forwards;
+}
+
+.inputValid {
+  background: white;
+  animation: inputBack 1s ease 0s 1 normal forwards;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 23px;
+  z-index: -2;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 23px;
+  z-index: -1;
+  transition-duration: 0.3s;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+.submitButton {
+  margin-top: 30px;
+  width: 100%;
+  width: 390px;
+  height: 60px;
+  border-radius: 23px;
+  /* background: #84c7ae; */
+  background: none;
+  color: #fff;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.submitButton:after {
+  background-color: #84c7ae;
+}
+
+.submitButton::before {
+  background-color: #4a9177;
+}
+
+.clearButton {
+  margin-top: 13px;
+  width: 100%;
+  width: 280px;
+  height: 40px;
+  border-radius: 23px;
+  background: rgb(248, 137, 117);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.clearButton:after {
+  background-color: rgb(248, 137, 117);
+}
+
+.clearButton::before {
+  background-color: tomato;
+}
+
+.error {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translate(-50%);
+  color: tomato;
+  white-space: nowrap;
+  animation: getError 1s ease 0s 1 normal forwards;
+}
+
+.errorBack {
+  animation: backError 1s ease 0s 1 normal forwards;
+}
+
+@keyframes inputBlink {
+  20%,
+  60%,
+  100% {
+    background: rgb(248, 197, 188);
+  }
+
+  0%,
+  40%,
+  80% {
+    background: white;
+  }
+}
+
+@keyframes inputBack {
+  0% {
+    background: rgb(248, 197, 188);
+  }
+  100% {
+    background: white;
+  }
+}
+
+@keyframes getError {
+  0% {
+    opacity: 0;
+    transform: translate(-50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%) scale(1);
+  }
+}
+
+@keyframes backError {
+  0% {
+    opacity: 1;
+    transform: translate(-50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%) scale(0);
+  }
+}
