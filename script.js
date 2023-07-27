@@ -1,6 +1,7 @@
-console.log('скрипт запущен');
-
 const form = document.forms.register;
+
+const passwordEye = document.getElementById('passwordEye');
+const repeatPasswordEye = document.getElementById('repeatPasswordEye');
 
 const { username, email, password, repeat_password } = form;
 
@@ -35,7 +36,6 @@ const removeError = (input) => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  console.log('превент дефаулт');
   if (nonactiveTimer) return;
   nonactiveTimer = true;
 
@@ -76,6 +76,46 @@ form.addEventListener('submit', (e) => {
   }, 1000);
 
   if (valid) {
-    //отправка на сервер
+    const formContent = form.querySelector('.formContent');
+    const checkContent = form.querySelector('.checkContent');
+    formContent.classList.add('contentExit');
+    checkContent.classList.add('checkEnter');
+  }
+});
+
+document.documentElement.addEventListener('mousemove', (e) => {
+  const x = e.screenX;
+  const y = e.screenY;
+  const height = document.body.clientHeight;
+  const width = document.body.clientWidth;
+  const xTranslate = (width / 2 - x) / 25;
+  const yTranslate = (height / 2 - y) / 25;
+  document.documentElement.style.setProperty(
+    '--x-translate',
+    `${xTranslate}px`
+  );
+  document.documentElement.style.setProperty(
+    '--y-translate',
+    `${yTranslate}px`
+  );
+});
+
+passwordEye.addEventListener('click', (e) => {
+  if (password.type === 'password') {
+    password.type = 'text';
+    e.target.src = 'assets/eye-off.svg';
+  } else {
+    password.type = 'password';
+    e.target.src = 'assets/eye.svg';
+  }
+});
+
+repeatPasswordEye.addEventListener('click', (e) => {
+  if (repeat_password.type === 'password') {
+    repeat_password.type = 'text';
+    e.target.src = 'assets/eye-off.svg';
+  } else {
+    repeat_password.type = 'password';
+    e.target.src = 'assets/eye.svg';
   }
 });

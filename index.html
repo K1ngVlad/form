@@ -2,7 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -48,6 +51,12 @@
                 placeholder="Пароль"
                 name="password"
               />
+              <img
+                class="passwordEyeIcon"
+                id="passwordEye"
+                src="assets/eye.svg"
+                alt="Показать"
+              />
             </div>
 
             <div class="inputBox">
@@ -56,6 +65,12 @@
                 class="inputField"
                 placeholder="Подтверждение пароля"
                 name="repeat_password"
+              />
+              <img
+                class="passwordEyeIcon"
+                id="repeatPasswordEye"
+                src="assets/eye.svg"
+                alt="Показать"
               />
             </div>
 
@@ -71,6 +86,14 @@
           </div>
           <button type="submit" class="submitButton">Создать аккаунт</button>
           <button type="reset" class="clearButton">Очистить поля</button>
+        </div>
+        <div class="checkContent">
+          <img
+            class="checkMark"
+            src="assets/check.svg"
+            alt="Регистрация прошла успешно"
+          />
+          <span class="checkText">Регистрация прошла успешно</span>
         </div>
       </form>
     </div>
