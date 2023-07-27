@@ -414,7 +414,7 @@ button:active {
   }
 }
 
-@media (max-height: 599px) {
+@media (max-height: 699px) {
   .container::after {
     width: 100px;
     height: 100px;
