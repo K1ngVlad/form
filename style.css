@@ -310,6 +310,11 @@ button:active {
     padding: 30px;
     border-radius: 30px;
   }
+
+  .descript {
+    width: 400px;
+    font-size: 16px;
+  }
 }
 
 @media (max-height: 799px) {
@@ -346,6 +351,7 @@ button:active {
   }
 
   .inputContainer {
+    margin: 0;
     padding: 0 20px;
   }
 
@@ -393,7 +399,7 @@ button:active {
 
   .error {
     bottom: -20px;
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .checkMark {

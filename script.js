@@ -76,10 +76,34 @@ form.addEventListener('submit', (e) => {
   }, 1000);
 
   if (valid) {
+    // const pushData = async () => {
+    //   const user = {
+    //     username: username.value,
+    //     email: email.value,
+    //     password: password.value,
+    //     phone: phone.value,
+    //   };
+
+    //   const response = await fetch('url', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json;charset=utf-8',
+    //     },
+    //     body: JSON.stringify(user),
+    //   });
+
+    //   const result = await response.ok;
+
+    //   if(result) {
     const formContent = form.querySelector('.formContent');
     const checkContent = form.querySelector('.checkContent');
     formContent.classList.add('contentExit');
     checkContent.classList.add('checkEnter');
+    //   }
+
+    // };
+
+    // pushData();
   }
 });
 
