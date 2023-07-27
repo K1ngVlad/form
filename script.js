@@ -84,6 +84,14 @@ form.addEventListener('submit', (e) => {
 });
 
 document.documentElement.addEventListener('mousemove', (e) => {
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    return;
+  }
+
   const x = e.screenX;
   const y = e.screenY;
   const height = document.body.clientHeight;
