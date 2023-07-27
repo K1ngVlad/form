@@ -329,9 +329,9 @@ button:active {
   }
 
   form {
-    width: 400px;
-    padding: 20px;
-    border-radius: 26px;
+    width: 300px;
+    padding: 10px;
+    border-radius: 24px;
   }
 
   .title {
@@ -340,9 +340,9 @@ button:active {
   }
 
   .descript {
-    width: 380px;
-    font-size: 16px;
-    line-height: 18px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 14px;
   }
 
   .inputContainer {
@@ -356,11 +356,11 @@ button:active {
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: #fff;
     outline: none;
-    padding: 20px;
+    padding: 16px;
     display: flex;
     align-items: center;
     color: black;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 13px;
   }
@@ -414,7 +414,7 @@ button:active {
   }
 }
 
-@media (max-height: 699px) {
+@media (max-height: 599px) {
   .container::after {
     width: 100px;
     height: 100px;
